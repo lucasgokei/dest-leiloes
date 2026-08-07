@@ -1,0 +1,15 @@
+services:
+  db:
+    image: postgres:16-alpine
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: destleiloes
+      POSTGRES_PASSWORD: destleiloes
+      POSTGRES_DB: destleiloes
+    ports:
+      - "5433:5432"
+    volumes:
+      - destleiloes-db-data:/var/lib/postgresql/data
+
+volumes:
+  destleiloes-db-data:
